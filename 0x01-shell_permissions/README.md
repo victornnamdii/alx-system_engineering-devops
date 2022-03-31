@@ -5,3 +5,4 @@ Describing scripts
  3-new_owner changes owner of hello to betty
 4-empty creates an empty file called hello
 5-execute grants execute permission for hello to owner
+6-multiple_permission adds execute permission to user and group and adds read permission to others
