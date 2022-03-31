@@ -4,3 +4,4 @@ Describing scripts
 2-groups prints all group ids of current user
  3-new_owner changes owner of hello to betty
 4-empty creates an empty file called hello
+5-execute grants execute permission for hello to owner
