@@ -8,3 +8,4 @@ Describing scripts
 6-multiple_permission adds execute permission to user and group and adds read permission to others
  7-everybody gives all permissions to everybody
 8-James_Bond gives zero permissions to group and owner, but all permissions to others
+9-John_Doe gives -rwxr-x-wx permissions to hello
