@@ -9,3 +9,4 @@ Describing scripts
  7-everybody gives all permissions to everybody
 8-James_Bond gives zero permissions to group and owner, but all permissions to others
 9-John_Doe gives -rwxr-x-wx permissions to hello
+10-mirror_permissions copies the permissions of olleh into hello
