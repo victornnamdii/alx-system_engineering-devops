@@ -11,3 +11,4 @@ Describing scripts
 9-John_Doe gives -rwxr-x-wx permissions to hello
 10-mirror_permissions copies the permissions of olleh into hello
 11-directories_permissions gives subdirectories only permissions only to everybody
+12-directory_permissions creates a my_dir with 751 permission
