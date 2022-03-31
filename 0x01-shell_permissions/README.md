@@ -15,3 +15,4 @@ Describing scripts
 13-change_group changes the group owners of hello to school
 100-change_owner_and_group changes owner to vincent and group owner to staff for all in dir
 101-symbolic_link_permissions changes owner to vincent and group to staff for the symbolic link _hello
+102-if_only changes owner of hello to betty if it is permitted by guillaume
