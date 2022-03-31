@@ -14,3 +14,4 @@ Describing scripts
 12-directory_permissions creates a my_dir with 751 permission
 13-change_group changes the group owners of hello to school
 100-change_owner_and_group changes owner to vincent and group owner to staff for all in dir
+101-symbolic_link_permissions changes owner to vincent and group to staff for the symbolic link _hello
