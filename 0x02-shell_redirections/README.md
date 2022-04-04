@@ -7,3 +7,4 @@ smiley prints smiley
 firstlines shows 1st 10 items
 new
 new
+new
