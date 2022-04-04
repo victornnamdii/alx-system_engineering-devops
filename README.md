@@ -1,1 +1,1 @@
-Scripts for shell basics
+describing scripts
