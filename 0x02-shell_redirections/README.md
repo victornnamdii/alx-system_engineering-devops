@@ -5,3 +5,4 @@ smiley prints smiley
 3-twofiles displays content of two files
 4-lastlines shows last 10 items
 firstlines shows 1st 10 items
+new
