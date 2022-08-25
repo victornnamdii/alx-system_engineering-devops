@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script displays listening ports
+# The flag -l tells netstat to print all listening sockets
+#+ -p enables printing of application/program name listening on the port
+
+netstat -lp
