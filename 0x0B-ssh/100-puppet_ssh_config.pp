@@ -1,13 +1,15 @@
 # ssh config with puppet
 
-sshd_config {
-  'IdentityFile':
-    value => '~/.ssh/school',
-    ;
-
-  'PasswordAuthentication':
-    value => 'no',
-    ;
+file { '/etc/ssh/sshd_config':
+  ensure => present,
 }
-
-purge { 'sshd_config': }
+-> file_line { 'Append a line to sshd_config':
+  path  => '/etc/ssh/sshd_config',
+  line  => 'PasswordAuthentication no',
+  match => 'PasswordAuthentication',
+}
+-> file_line { 'Append a line to sshd_config':
+  path  => '/etc/ssh/sshd_config',
+  line  => 'IdentityFile ~/.ssh/school',
+  match => 'IdentityFile',
+}
