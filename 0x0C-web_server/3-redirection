@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # A Bash script that configures a new Ubuntu machine to respect the requirements:
-#+ Install nginx
-#+ Nginx should be listening on port 80
-#+ When querying Nginx at its root / with a GET request (requesting a page) using curl, it must return a page that contains the string Holberton School
+# Configure a new Nginx server so that /redirect_me is redirecting to another page
+#+ The redirection must be a “301 Moved Permanently”
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 sudo chown "$USER":"$USER" /var/www/html/index.html
 echo 'Hello World!' > /var/www/html/index.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sed -i '/server name _;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 sudo service nginx start
