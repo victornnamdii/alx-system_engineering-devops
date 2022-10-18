@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A Bash script that configures a new Ubuntu machine to respect the requirements:
+# Configure a new Nginx server so that /redirect_me is redirecting to another page
+#+ The redirection must be a “301 Moved Permanently”
+#+ Configure your Nginx server to have a custom 404 page that contains the string Ceci n'est pas une page
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo chown "$USER":"$USER" /var/www/html/index.html
+echo 'Hello World!' > /var/www/html/index.html
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo mkdir -p /var/www/error
+echo "Ceci n'est pas une page" | sudo tee /var/www/error/404.html
+sudo sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
+sudo service nginx start
