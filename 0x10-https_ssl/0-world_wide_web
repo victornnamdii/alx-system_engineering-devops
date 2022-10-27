@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+
+all_subdomains=( "www" "lb-01" "web-01" "web-02" )
+
+display () {
+	subdomain=$1
+	domain=$2
+
+	dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v s="$subdomain" 'BEGIN { FS = " " } ; { print "The subdomain", s, "is a", $4, "record and points to", $5 }'
+}
+
+if [ $# -eq 1 ]; then
+	domain="$1"
+	for i in "${all_subdomains[@]}"
+	do
+		display "$i" "$domain"
+	done
+elif [ $# -eq 2 ]; then
+	domain="$1"
+	subdomain="$2"
+	display "$subdomain" "$domain"
+fi
