@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Makes sure:
+#+ nginx is running as user nginx
+#+ nginx must be listening on all active IP on port 8080
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+su nginx -s /bin/bash -c 'service nginx restart'
