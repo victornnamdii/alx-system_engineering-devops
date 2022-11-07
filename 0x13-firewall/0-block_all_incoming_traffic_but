@@ -1,0 +1,5 @@
+sudo ufw default deny incoming
+sudo ufw allow ssh/tcp
+sudo ufw allow 80/tcp
+sudp ufw allow 443/tcp
+sudo ufw enable
