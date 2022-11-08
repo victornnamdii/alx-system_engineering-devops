@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #+ nginx is running as user nginx
-sudo chmod 755 /etc/nginx/nginx.conf
-sudo sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
-sudo chown nginx:nginx /etc/nginx/nginx.conf
-sudo sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
-sudo -u nginx service nginx restart
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+pkill apache2
+chmod 644 /etc/nginx/nginx.conf
+sudo --user nginx service nginx start
