@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Contains the function number_of_subscribers
+    Contains the function top_ten
 """
 
 from requests import get
