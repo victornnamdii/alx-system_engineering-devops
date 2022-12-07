@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # tells Gunicorn to reload gracefully
-pkill -HUP gunicorn
+kill -HUP gunicorn
